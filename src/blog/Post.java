@@ -10,13 +10,25 @@ public class Post {
 	private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	private Date date = new Date();
 	private String title;
-	public Author author;
-	public Category category;
+	private Author author;
+	private Category category;
 
-	public void SetValues(String title_in, String content_in, Date date_in) {
+	public void SetValues(String title_in, String content_in, Date date_in, Author author_in, Category category_in) {
 		title = title_in;
 		content = content_in;
 		date = date_in;
+		author = author_in;
+		category = category_in;
+	}
+	
+	//return the Author object of this post
+	public Author getAuthor(){
+		return author;
+	}
+	
+	//return the Category object of this post
+	public Category getCategory(){
+		return category;
 	}
 
 	public String getTitle() {
