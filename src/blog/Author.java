@@ -27,8 +27,24 @@ public class Author {
 		id = id_in;
 	}
 	
+	public String getFirstName(){
+		return firstName;
+	}
+	
+	public String getLastName(){
+		return lastName;
+	}
+	
 	public String getName(){
 		return firstName + " " + lastName;
+	}
+	
+	public String getGender(){
+		return gender;
+	}
+	
+	public String getCountry(){
+		return country;
 	}
 	
 	public int getAge(){

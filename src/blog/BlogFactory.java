@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.PreparedStatement;
 
 public class BlogFactory {
 	
@@ -214,7 +215,64 @@ public class BlogFactory {
 	}
 
 
+	//add new author to database
+	public static void insertAuthor(Author author)
+	{
+
+		try {
+			con = DriverManager.getConnection(url, user, password);
+
+			PreparedStatement prepStmt = con.prepareStatement("INSERT INTO authors (firstName, lastName, age, gender, country, mail) VALUES (?, ?, ?, ?, ?, ?)");
+			prepStmt.setString(1, author.getFirstName());
+			prepStmt.setString(2,  author.getLastName());
+			prepStmt.setInt(3,  author.getAge());
+			prepStmt.setString(4,  author.getGender());
+			prepStmt.setString(5,  author.getCountry());
+			prepStmt.setString(6,  author.getEmail());
+
+			System.out.println(prepStmt.toString());
+			prepStmt.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
+	
+	// add new category to database
+	public static void insertCategory(Category category) {
+
+		try {
+			con = DriverManager.getConnection(url, user, password);
+
+			PreparedStatement prepStmt = con.prepareStatement("INSERT INTO categories (category) VALUES (?)");
+			prepStmt.setString(1, category.getCategory());
+
+			System.out.println(prepStmt.toString());
+			prepStmt.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+		
+	// add new post to database
+	public static void insertPost(Post post) {
+
+		try {
+			con = DriverManager.getConnection(url, user, password);
+
+			PreparedStatement prepStmt = con.prepareStatement("INSERT INTO post (title, content, date, authorId, categoryId) VALUES (?, ?, ?, ?, ?)");
+			prepStmt.setString(1, post.getTitle());
+			prepStmt.setString(2, post.getContent());
+			prepStmt.setString(3, post.getDate());
+			prepStmt.setInt(4, post.getAuthor().getId());
+			prepStmt.setInt(5, post.getCategory().getId());
+
+			System.out.println(prepStmt.toString());
+			prepStmt.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
 
 }
