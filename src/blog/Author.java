@@ -1,13 +1,15 @@
 package blog;
 public class Author {
+	
+	private int id;
 	private String firstName;
 	private String lastName;
-	private String age;
+	private int age;
 	private String gender;
 	private String country;
 	private String email;
 	
-	public void SetValues(String firstName_in, String lastName_in, String age_in, String gender_in, String country_in, String email_in){
+	public void setValues(String firstName_in, String lastName_in, int age_in, String gender_in, String country_in, String email_in){
 		firstName = firstName_in;
 		lastName = lastName_in;
 		age = age_in;
@@ -17,20 +19,29 @@ public class Author {
 	}
 	
 	
-	public String GetName(){
+	public int getId(){
+		return id;
+	}
+	
+	public void setId(int id_in){
+		id = id_in;
+	}
+	
+	public String getName(){
 		return firstName + " " + lastName;
 	}
 	
-	public String GetAge(){
+	public int getAge(){
 		return age;
 	}
 	
-	public String GetEmail(){
+	public String getEmail(){
 		return email;
 	}
 	
-	public String ReturnString(){
+	public String returnString(){
 		return "Namn: " + firstName + " " + lastName + "\r\n" + "Ålder: " + age + "\r\n" + "Kön: " + gender + "\r\n" + "Nationalitet: " + country + "\r\n" + "E-mail: " + email + "\r\n";
 	}
+	
 
 }

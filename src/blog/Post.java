@@ -6,6 +6,7 @@ import com.ibm.icu.text.SimpleDateFormat;
 
 public class Post {
 
+	private int id;
 	private String content;
 	private DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	private Date date = new Date();
@@ -13,12 +14,28 @@ public class Post {
 	private Author author;
 	private Category category;
 
-	public void SetValues(String title_in, String content_in, Date date_in, Author author_in, Category category_in) {
+	public void setValues(String title_in, String content_in, Date date_in) {
 		title = title_in;
 		content = content_in;
 		date = date_in;
+	}
+	
+	//set the author of this post
+	public void setAuthor(Author author_in){
 		author = author_in;
+	}
+	
+	public void setCategory(Category category_in){
 		category = category_in;
+	}
+	
+	//return the id
+	public int getId(){
+		return id;
+	}
+	
+	public void setId(int id_in){
+		id = id_in;
 	}
 	
 	//return the Author object of this post
@@ -43,18 +60,26 @@ public class Post {
 		this.title = title;
 	}
 
-	public String GetContent() {
+	public String getContent() {
 		return content;
 	}
 
-	public String GetDate() {
+	public String getDate() {
 		return dateFormat.format(date);
 	}
 
-	public String GetBloggPost() {
-		return "Författare: " + author.GetName() + "\r\n" + "Kategori: "
-				+ category.GetCategory() + "\r\n" + title + "\r\n" + GetDate()
+	public String getBlogPost() {
+		return "Författare: " + author.getName() + "\r\n" + "Kategori: "
+				+ category.getCategory() + "\r\n" + title + "\r\n" + getDate()
 				+ "\r\n" + content;
 	}
+
+	@Override
+	public String toString() {
+		return "Post [id=" + id + ", content=" + content + ", dateFormat="
+				+ dateFormat + ", date=" + date + ", title=" + title
+				+ ", author=" + author + ", category=" + category + "]";
+	}
+	
 
 }
