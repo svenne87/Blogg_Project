@@ -64,7 +64,13 @@ public class Post {
 		return content;
 	}
 
+	//date with time
 	public String getDate() {
+		return dateFormat.format(date);
+	}
+	
+	//the date without time
+	public String getJustDate(){
 		return date.toString();
 	}
 

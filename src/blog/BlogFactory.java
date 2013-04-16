@@ -15,7 +15,7 @@ public class BlogFactory {
 	private static Statement st = null;
 	private static ResultSet rs = null;
 
-	private static String url = "jdbc:mysql://localhost:3306/blog";
+	private static String url = "jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=UTF-8";
 	private static String user = "root";
 	private static String password = "";
 	
