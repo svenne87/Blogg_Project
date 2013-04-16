@@ -20,6 +20,17 @@ public class BlogFactory {
 	private static String password = "";
 	
 	
+	//function to create and fill the blogSystem
+	public static Blogg createBlogSystem(Blogg bloggSystem){
+		bloggSystem = new Blogg();
+	
+		bloggSystem.setAuthors(BlogFactory.getAllAuthors());
+		bloggSystem.setCategories(BlogFactory.getAllCategories());
+		bloggSystem.setPosts(BlogFactory.getAllPosts(bloggSystem));
+		
+		return bloggSystem;
+	}
+	
 	
 	//returns the category with that id
 	public static Category getCategory(int id) {

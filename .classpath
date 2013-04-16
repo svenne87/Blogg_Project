@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="D:/Program/eclipse/plugins/com.ibm.icu_4.4.2.v20110823.jar" sourcepath="D:/Program/eclipse/plugins/com.ibm.icu.source_4.4.2.v20110823.jar"/>
 	<classpathentry kind="lib" path="D:/Program/eclipse/plugins/org.eclipse.ui.forms_3.5.200.v20120705-114351.jar" sourcepath="D:/Program/eclipse/plugins/org.eclipse.ui.forms.source_3.5.200.v20120705-114351.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Svenne/workspace/Blogg_Project/mysql-connector-java-5.1.24-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
