@@ -65,7 +65,7 @@ public class Post {
 	}
 
 	public String getDate() {
-		return dateFormat.format(date);
+		return date.toString();
 	}
 
 	public String getBlogPost() {
