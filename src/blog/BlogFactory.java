@@ -285,5 +285,24 @@ public class BlogFactory {
 		}
 	}
 	
+	//function to remove post
+	public static void removePost(int id){
+		
+		try {
+			con = DriverManager.getConnection(url, user, password);
+
+			String tempSQLString = "DELETE FROM post WHERE id =?";
+
+			PreparedStatement prepStmt = con.prepareStatement(tempSQLString);
+			prepStmt.setInt(1, id);
+
+			prepStmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 
 }
